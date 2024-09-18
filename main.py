@@ -1,35 +1,23 @@
-import sqlite3
-import tkinter as tk
-from tkinter import ttk
-from tkinter import PhotoImage
-from tkinter import messagebox
-from ttkbootstrap import Style
-from PIL import Image, ImageTk
+from customtkinter import *
 
-if __name__ == '__main__':
+app = CTk()
+app.geometry("900x600")
 
-    # Create the main GUI window
-    root = tk.Tk()
-    root.title('Flashcards App')
-    root.geometry('1000x680')
-    root.configure(bg='white')
+set_appearance_mode("light")
+background_frame = CTkFrame(master=app, fg_color="white")
+background_frame.pack(fill="both", expand=True)
 
-    # Load the image as an icon
-    icon_image = PhotoImage(file=r"C:\Users\mikah\OneDrive\Pictures\SAT ICON.png")
-    root.iconphoto(True, icon_image)
+btn = CTkButton(master=app, text="Flashcards", corner_radius=10, fg_color="#ffffff",
+                hover_color="#f5f8fc", border_color="#000000", border_width=2)
+btn.place(relx=0.5, rely=0.5, anchor="center")
 
-    # Apply styling to the GUI elements
-    style = Style(theme='superhero')
-    style.configure('TLabel', font=('TkDefault', 18))
-    style.configure('TButton', font=('TkDefault', 16))
+frame = CTkFrame(master=app, width=440, height=170, corner_radius=20, fg_color="transparent", border_width=2, border_color="black")
+frame.place(relx=0.5, rely=0.3, anchor="center")
 
-    # Set up variables for storing user input
-    set_name_var = tk.StringVar()
-    word_var = tk.StringVar()
-    definition_var = tk.StringVar()
+label = CTkLabel(master=frame, text="SAT PRACTICE", font=("Helvetica", 40, "bold"), text_color="#009ADA")
+label.place(relx=0.5, rely=0.5, anchor="center")
 
-    # Create a notebook widget to manage tabs
-    notebook = ttk.Notebook(root)
-    notebook.pack(fill='both', expand=True)
+canvas = CTkCanvas(app, width=900, height=600, bg='white', highlightthickness=0)
+canvas.create_line(0, 300, 900, 300, fill="black", width=2)
 
-    root.mainloop()
+app.mainloop()
