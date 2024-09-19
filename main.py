@@ -1,23 +1,36 @@
 from customtkinter import *
 
+# Set app dimensions and title
 app = CTk()
-app.geometry("900x600")
+app.geometry("900x550")
+app.title("SAT Flashcard Tool")
 
-set_appearance_mode("light")
-background_frame = CTkFrame(master=app, fg_color="white")
+# Set background colour and appearance mode
+background_frame = CTkFrame(master=app, fg_color="#FFFFFF")
 background_frame.pack(fill="both", expand=True)
+set_appearance_mode("light")
 
-btn = CTkButton(master=app, text="Flashcards", corner_radius=10, fg_color="#ffffff",
+# Add flashcard button
+btn = CTkButton(master=app, width=230, height=80, text="FLASHCARDS", font=("Helvetica", 23, "bold"), text_color="#009ADA", corner_radius=25, fg_color="#ffffff",
                 hover_color="#f5f8fc", border_color="#000000", border_width=2)
-btn.place(relx=0.5, rely=0.5, anchor="center")
+btn.place(relx=0.5, rely=0.8, anchor="center")
 
-frame = CTkFrame(master=app, width=440, height=170, corner_radius=20, fg_color="transparent", border_width=2, border_color="black")
+# Add translate button
+btn = CTkButton(master=app, width=100, height=30, text="TRANSLATE", font=("Helvetica", 16, "bold"), text_color="#009ADA", corner_radius=8, fg_color="#ffffff",
+                hover_color="#f5f8fc", border_color="#000000", border_width=2)
+btn.place(relx=0.92, rely=0.05, anchor="center")
+
+# Create frame around heading
+frame = CTkFrame(master=app, width=440, height=170, corner_radius=25, fg_color="white", border_width=2, border_color="black")
 frame.place(relx=0.5, rely=0.3, anchor="center")
 
-label = CTkLabel(master=frame, text="SAT PRACTICE", font=("Helvetica", 40, "bold"), text_color="#009ADA")
-label.place(relx=0.5, rely=0.5, anchor="center")
+# Label the frame with heading
+label = CTkLabel(master=frame, text="SAT PRACTICE", font=("Helvetica", 50, "bold"), text_color="#009ADA")
+label.place(relx=0.5, rely=0.3, anchor="center")
 
-canvas = CTkCanvas(app, width=900, height=600, bg='white', highlightthickness=0)
-canvas.create_line(0, 300, 900, 300, fill="black", width=2)
+# Label for description with text wrapping
+label_description = CTkLabel(master=frame, text="Prepare for Bluebook's Digital SAT Test with this free practice resource. Select between formula flashcards or timed practice questions.",
+                             font=("Roboto", 15), text_color="#000000", wraplength=400)  # Set wraplength to 400
+label_description.place(relx=0.5, rely=0.7, anchor="center")
 
 app.mainloop()
