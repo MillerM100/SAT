@@ -3,12 +3,14 @@ import random
 import time
 import customtkinter as ctk
 from customtkinter import *
+from PIL import Image, ImageTk
 
-# Set up window dimensions, title, and appearance mode
+# Set up window dimensions, title, appearance mode and icon
 app = CTk()
 app.geometry("900x550")
 app.title("SAT Practice Program")
 set_appearance_mode("light")
+app.iconbitmap("C:\\Users\\mikah\\Downloads\\UploadImageForSAT.ico")
 
 # Initialize tracking variables for time, correct/incorrect answers, and flashcards
 start_time = None  # Track when the session begins
@@ -17,20 +19,21 @@ numCorrect = 0  # Number of correct answers
 numIncorrect = 0  # Number of incorrect answers
 numFlashcards = 0  # Total number of flashcards shown
 
-# Create frames for different sections/pages to display content seperately
+# Create frames for different sections/pages to display content separately
 main_frame = CTkFrame(master=app, fg_color="#FFFFFF")  # Main page
 flashcard_frame = CTkFrame(master=app, fg_color="#FFFFFF")  # Flashcards page
 results_frame = CTkFrame(master=app, fg_color="#FFFFFF")  # Results page
 end_frame = CTkFrame(master=app, fg_color="#FFFFFF")  # End session page
 instructions_frame = CTkFrame(master=app, fg_color="#FFFFFF")  # Instructions page
 
-
 # Increment flashcard count and handle correct answers
 def show_flashcard(is_correct):
     global numFlashcards, numCorrect
     numFlashcards += 1  # Increase the count of flashcards shown
+    print(f"Showing flashcard number: {numFlashcards}")  # Print the current flashcard number
     if is_correct:
         numCorrect += 1  # Increment answer count
+        print(f"Correct answer registered. Total correct: {numCorrect}")  # Print if the answer was correct
 
 # Function to raise the specific frame
 def show_frame(frame):
@@ -82,14 +85,13 @@ def answer_incorrect():
     numFlashcards += 1  # Increment total flashcards count
     print(f"Answer Incorrect: {numCorrect} correct, {numFlashcards} total")
 
+# Load flashcards from a JSON file
+with open("C:\\Users\\mikah\\OneDrive\\Desktop\\Formulas100.json", 'r', encoding='utf-8') as file:
+    flashcards_data = json.load(file)
 
 # Function to clean flashcard definitions by removing special characters
 def clean_definition(definition):
     return definition.replace("Â", "").replace("â", "").replace("²", "²")
-
-# Load flashcards from a JSON file
-with open("C:\\Users\\mikah\\OneDrive\\Desktop\\Formulas100.json", 'r', encoding='utf-8') as file:
-    flashcards_data = json.load(file)
 
 # Remove special characters from flashcard definitions
 for card in flashcards_data:
@@ -411,3 +413,4 @@ show_frame(main_frame)
 
 # Run the app
 app.mainloop()
+
