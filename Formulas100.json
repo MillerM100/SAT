@@ -1,0 +1,28 @@
+{
+    "Linear Equation": "y = mx + b",
+    "Circle Equation": "(x - h)² + (y - k)² = r²",
+    "Pythagorean Theorem": "a² + b² = c²",
+    "Quadratic Formula": "y = (-b ± √(b² - 4ac)) / 2a",
+    "Binomial Expansion": "a² + 2ab + b² = (a + b)²",
+    "Binomial Expansion": "a² - 2ab + b² = (a - b)²",
+    "Difference of Squares": "a² - b² = (a + b)(a - b)",
+    "Exponential Equation": "y = a · b^x",
+    "Exponential Growth": "f(x) = a(1 + r)^x",
+    "Polynomial Equation": "y = ax² + bx + c",
+    "Linear Equation": "ax + by = c",
+    "Proportion": "a/b = c/d = ac/bd",
+    "Complex Fraction": "(a/b) / (c/d) = ad/bc",
+    "Arithmetic Series": "a/b ± c/d = (ad ± bc) / bd",
+    "Central Angle": "central angle / 360° or 2π = arc length / circumference = sector area / circle area",
+    "Radian Measure": "radian measure / π = degree measure / 180°",
+    "Special Right Triangles": "30°-60°-90°",
+    "Special Right Triangles": "45°-45°-90°",
+    "Trigonometric Ratios": "SOH-CAH-TOA",
+    "Product Zero": "a · b = 0, then a or b or both must = 0",
+    "Discriminant": "D = b² - 4ac",
+    "Proportion Equation": "is/of = %/100",
+    "Percentage Change": "% change = 100(PM - 1)",
+    "Reciprocal": "a/b = -b/a",
+    "Solutions for Equations": "1 solution: Diff slope, Diff intercept\nInfinite solutions: Same slope, Same intercept\nNo solutions: Same slope, Diff intercept"
+}
+
