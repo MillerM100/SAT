@@ -10,7 +10,7 @@ app = CTk()
 app.geometry("900x550")
 app.title("SAT Practice Program")
 set_appearance_mode("light")
-app.iconbitmap("C:\\Users\\mikah\\Downloads\\UploadImageForSAT.ico")
+app.iconbitmap("UploadImageForSAT.ico")
 
 # Initialize tracking variables for time, correct/incorrect answers, and flashcards
 start_time = None  # Track when the session begins
@@ -86,7 +86,7 @@ def answer_incorrect():
     print(f"Answer Incorrect: {numCorrect} correct, {numFlashcards} total")
 
 # Load flashcards from a JSON file
-with open("C:\\Users\\mikah\\OneDrive\\Desktop\\Formulas100.json", 'r', encoding='utf-8') as file:
+with open("Formulas100.json", 'r', encoding='utf-8') as file:
     flashcards_data = json.load(file)
 
 # Function to clean flashcard definitions by removing special characters
